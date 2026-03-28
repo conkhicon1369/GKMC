@@ -1,0 +1,39 @@
+<%- include('../partials/header', { title: 'Đăng Ký' }) %>
+
+<div class="section">
+  <div class="auth-box">
+    <h2>Đăng Ký Tài Khoản</h2>
+
+    <form action="/auth/register" method="POST">
+      <div class="form-group">
+        <label>Họ và tên</label>
+        <input type="text" name="fullName" class="form-control" placeholder="Nguyễn Văn A" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" placeholder="email@gmail.com" required>
+      </div>
+      <div class="form-group">
+        <label>Mật khẩu</label>
+        <input type="password" name="password" class="form-control" placeholder="Tối thiểu 6 ký tự" minlength="6" required>
+      </div>
+      <div class="form-group">
+        <label>Số điện thoại</label>
+        <input type="tel" name="phone" class="form-control" placeholder="0123456789">
+      </div>
+      <div class="form-group">
+        <label>Địa chỉ</label>
+        <input type="text" name="address" class="form-control" placeholder="Đà Nẵng">
+      </div>
+      <button type="submit" class="btn btn-primary btn-full" style="padding:0.7rem; margin-top:0.25rem;">
+        Đăng Ký
+      </button>
+    </form>
+
+    <p style="text-align:center; margin-top:1rem; font-size:0.88rem; color:var(--text-muted);">
+      Đã có tài khoản? <a href="/auth/login">Đăng nhập</a>
+    </p>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

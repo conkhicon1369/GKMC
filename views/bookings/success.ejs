@@ -1,0 +1,48 @@
+<%- include('../partials/header', { title: 'Đặt Phòng Thành Công' }) %>
+
+<div class="section">
+  <div class="success-box">
+    <div class="success-icon">✓</div>
+    <h2>Đặt Phòng Thành Công!</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size:0.9rem;">
+      Cảm ơn bạn đã đặt phòng. Chúng tôi sẽ liên hệ xác nhận trong thời gian sớm nhất.
+    </p>
+
+    <% if (booking) { %>
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius:6px; padding:1rem; text-align:left; margin-bottom:1.5rem;">
+        <div class="summary-row">
+          <span>Mã đặt phòng</span>
+          <span style="font-size:0.75rem; color:var(--primary); word-break:break-all;"><%= booking._id %></span>
+        </div>
+        <div class="summary-row">
+          <span>Khách hàng</span>
+          <span><%= booking.guestName %></span>
+        </div>
+        <div class="summary-row">
+          <span>Phòng</span>
+          <span><%= booking.roomId ? booking.roomId.roomType : '' %></span>
+        </div>
+        <div class="summary-row">
+          <span>Nhận phòng</span>
+          <span><%= new Date(booking.checkInDate).toLocaleDateString('vi-VN') %></span>
+        </div>
+        <div class="summary-row">
+          <span>Trả phòng</span>
+          <span><%= new Date(booking.checkOutDate).toLocaleDateString('vi-VN') %></span>
+        </div>
+        <div class="summary-row">
+          <span>Số phòng</span>
+          <span><%= booking.roomCount %></span>
+        </div>
+        <div class="summary-total">
+          <span>Tổng tiền</span>
+          <span><%= booking.totalPrice.toLocaleString('vi-VN') %>₫</span>
+        </div>
+      </div>
+    <% } %>
+
+    <a href="/" class="btn btn-primary btn-full">← Quay về Trang Chủ</a>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

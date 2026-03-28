@@ -1,0 +1,69 @@
+<%- include('../../../partials/header', { title: 'Quản Lý Phòng' }) %>
+
+<div class="admin-layout">
+  <div class="admin-sidebar">
+    <a href="/admin">📊 Dashboard</a>
+    <a href="/admin/rooms" class="active">🚪 Quản lý Phòng</a>
+    <a href="/admin/bookings">📋 Đặt Phòng</a>
+    <a href="/">← Trang Chủ</a>
+  </div>
+
+  <div class="admin-content">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+      <h2 style="font-size:1.2rem; font-weight:700; color:var(--primary);">Danh Sách Phòng</h2>
+      <a href="/admin/rooms/new" class="btn btn-primary">+ Thêm Phòng</a>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Loại Phòng</th>
+            <th>Khách Sạn</th>
+            <th>Giá / Đêm</th>
+            <th>Sức Chứa</th>
+            <th>Tổng Phòng</th>
+            <th>Còn Trống</th>
+            <th>Hành Động</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (rooms.length === 0) { %>
+            <tr><td colspan="8" style="text-align:center; color:var(--text-muted); padding:2rem;">Chưa có phòng nào</td></tr>
+          <% } %>
+          <% rooms.forEach((room, i) => { %>
+            <tr>
+              <td><%= i + 1 %></td>
+              <td style="font-weight:600;"><%= room.roomType %></td>
+              <td style="color:var(--text-muted); font-size:0.85rem;">
+                <%= room.hotelId ? room.hotelId.name + '<br>' + room.hotelId.city : 'N/A' %>
+              </td>
+              <td style="color:var(--primary); font-weight:600;">
+                <%= room.pricePerNight.toLocaleString('vi-VN') %>₫
+              </td>
+              <td><%= room.capacity %> người</td>
+              <td><%= room.quantity %></td>
+              <td>
+                <% if (room.availableRooms > 0) { %>
+                  <span class="badge badge-confirmed"><%= room.availableRooms %></span>
+                <% } else { %>
+                  <span class="badge badge-cancelled">Hết</span>
+                <% } %>
+              </td>
+              <td>
+                <a href="/admin/rooms/<%= room._id %>/edit" class="btn btn-outline btn-sm">Sửa</a>
+                <form action="/admin/rooms/<%= room._id %>?_method=DELETE" method="POST" style="display:inline;"
+                  onsubmit="return confirm('Xóa phòng này?')">
+                  <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%- include('../../../partials/footer') %>

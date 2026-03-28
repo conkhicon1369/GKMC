@@ -1,0 +1,38 @@
+<%- include('../../partials/header', { title: 'Quản Trị' }) %>
+
+<div class="admin-layout">
+  <!-- SIDEBAR -->
+  <div class="admin-sidebar">
+    <a href="/admin" class="active">📊 Dashboard</a>
+    <a href="/admin/rooms">🚪 Quản lý Phòng</a>
+    <a href="/admin/bookings">📋 Đặt Phòng</a>
+    <a href="/">← Trang Chủ</a>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="admin-content">
+    <h2 style="font-size:1.3rem; font-weight:700; margin-bottom:1.5rem; color: var(--primary);">Dashboard</h2>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="stat-num"><%= totalRooms %></div>
+        <div class="stat-label">Tổng số phòng</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><%= totalBookings %></div>
+        <div class="stat-label">Tổng đặt phòng</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:var(--accent);"><%= pendingBookings %></div>
+        <div class="stat-label">Chờ xác nhận</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="/admin/rooms/new" class="btn btn-primary">+ Thêm phòng mới</a>
+      <a href="/admin/bookings" class="btn btn-outline">Xem danh sách đặt phòng</a>
+    </div>
+  </div>
+</div>
+
+<%- include('../../partials/footer') %>

@@ -1,0 +1,84 @@
+<%- include('../../../partials/header', { title: 'Thêm Phòng' }) %>
+
+<div class="admin-layout">
+  <div class="admin-sidebar">
+    <a href="/admin">📊 Dashboard</a>
+    <a href="/admin/rooms" class="active">🚪 Quản lý Phòng</a>
+    <a href="/admin/bookings">📋 Đặt Phòng</a>
+    <a href="/">← Trang Chủ</a>
+  </div>
+
+  <div class="admin-content">
+    <div style="max-width:640px;">
+      <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+        <a href="/admin/rooms" style="color:var(--text-muted); font-size:0.85rem;">← Quay lại</a>
+        <h2 style="font-size:1.2rem; font-weight:700; color:var(--primary);">Thêm Phòng Mới</h2>
+      </div>
+
+      <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:6px; padding:1.5rem;">
+        <form action="/admin/rooms" method="POST">
+
+          <div class="form-group">
+            <label>Khách Sạn <span style="color:var(--danger)">*</span></label>
+            <select name="hotelId" class="form-control" required>
+              <option value="">-- Chọn khách sạn --</option>
+              <% hotels.forEach(h => { %>
+                <option value="<%= h._id %>"><%= h.name %> - <%= h.city %></option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Loại Phòng <span style="color:var(--danger)">*</span></label>
+              <input type="text" name="roomType" class="form-control" placeholder="Deluxe, Suite..." required>
+            </div>
+            <div class="form-group">
+              <label>Giá / Đêm (VNĐ) <span style="color:var(--danger)">*</span></label>
+              <input type="number" name="pricePerNight" class="form-control" placeholder="1200000" min="0" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Sức Chứa (người)</label>
+              <input type="number" name="capacity" class="form-control" value="2" min="1">
+            </div>
+            <div class="form-group">
+              <label>Diện Tích (m²)</label>
+              <input type="number" name="size" class="form-control" placeholder="30" min="0">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Tổng Số Phòng</label>
+              <input type="number" name="quantity" class="form-control" value="1" min="1">
+            </div>
+            <div class="form-group">
+              <label>Số Phòng Còn Trống</label>
+              <input type="number" name="availableRooms" class="form-control" value="1" min="0">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Mô Tả</label>
+            <textarea name="description" class="form-control" rows="3" placeholder="Mô tả phòng..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Tiện Nghi <small style="color:var(--text-muted)">(cách nhau bằng dấu phẩy)</small></label>
+            <input type="text" name="amenities" class="form-control" placeholder="wifi, hồ bơi, điều hòa, minibar">
+          </div>
+
+          <div style="display:flex; gap:1rem; margin-top:0.5rem;">
+            <button type="submit" class="btn btn-primary">Thêm Phòng</button>
+            <a href="/admin/rooms" class="btn btn-outline">Hủy</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../../../partials/footer') %>
