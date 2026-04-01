@@ -4,6 +4,23 @@ const mongoose = require('mongoose');
 
 const Article = mongoose.model('Article');
 
+// ============================================================
+// ⚠️  QUAN TRỌNG: các route "cụ thể" phải đặt TRƯỚC /:slug
+//     Nếu /featured/top đặt sau, Express nhầm "featured" = slug
+// ============================================================
+
+// GET bài viết nổi bật (views cao nhất)
+router.get('/featured/top', async (req, res) => {
+  try {
+    const articles = await Article.find({ status: 'published' })
+      .sort({ views: -1 })
+      .limit(5);
+    res.json(articles);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // GET tất cả bài viết (có filter theo category, status)
 router.get('/', async (req, res) => {
   try {
@@ -15,7 +32,7 @@ router.get('/', async (req, res) => {
 
     const articles = await Article.find(filter)
       .sort({ publishedAt: -1 })
-      .skip((page - 1) * limit)
+      .skip((page - 1) * Number(limit))
       .limit(Number(limit));
 
     const total = await Article.countDocuments(filter);
@@ -31,7 +48,6 @@ router.get('/:slug', async (req, res) => {
     const article = await Article.findOne({ slug: req.params.slug });
     if (!article) return res.status(404).json({ error: 'Không tìm thấy bài viết' });
 
-    // Tăng view
     article.views += 1;
     await article.save();
 
@@ -44,7 +60,6 @@ router.get('/:slug', async (req, res) => {
 // POST tạo bài viết mới
 router.post('/', async (req, res) => {
   try {
-    // Tạo slug tự động từ title
     const slug = req.body.title
       .toLowerCase()
       .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -80,18 +95,6 @@ router.delete('/:id', async (req, res) => {
   try {
     await Article.findByIdAndDelete(req.params.id);
     res.json({ message: 'Đã xóa bài viết' });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// GET bài viết nổi bật (views cao nhất)
-router.get('/featured/top', async (req, res) => {
-  try {
-    const articles = await Article.find({ status: 'published' })
-      .sort({ views: -1 })
-      .limit(5);
-    res.json(articles);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
