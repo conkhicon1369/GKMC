@@ -14,38 +14,37 @@ export default function HomePage() {
 
   useEffect(() => {
     const fetchArticles = async () => {
-  dispatch(setLoading(true));
-  try {
-    const params = { page: currentPage, limit: ARTICLES_PER_PAGE };
-    if (selectedCategory && selectedCategory !== 'Tất cả') {
-      params.category = selectedCategory;
-    }
+      dispatch(setLoading(true));
+      try {
+        const params = { page: currentPage, limit: ARTICLES_PER_PAGE };
+        if (selectedCategory && selectedCategory !== 'Tất cả') {
+          params.category = selectedCategory;
+        }
 
-    const res = await axios.get('https://YOUR-5000-URL/api/articles', { params });
+        // ✅ FIX: Dùng URL tương đối để Vite proxy hoạt động
+        //    (bỏ 'https://YOUR-5000-URL' placeholder)
+        const res = await axios.get('/api/articles', { params });
 
-    // ✅ LẤY ĐÚNG DATA
-    let articlesData = res.data.articles;
+        let articlesData = res.data.articles;
 
-    // ✅ FILTER
-    if (searchQuery) {
-      articlesData = articlesData.filter(a =>
-        a.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        a.summary?.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }
+        if (searchQuery) {
+          articlesData = articlesData.filter(a =>
+            a.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            a.summary?.toLowerCase().includes(searchQuery.toLowerCase())
+          );
+        }
 
-    // ✅ 👉 VIẾT Ở ĐÂY (QUAN TRỌNG)
-    dispatch(setArticles({
-      articles: articlesData,
-      total: res.data.total
-    }));
+        dispatch(setArticles({
+          articles: articlesData,
+          total: res.data.total
+        }));
 
-  } catch (err) {
-    console.error(err);
-  } finally {
-    dispatch(setLoading(false));
-  }
-};
+      } catch (err) {
+        console.error(err);
+      } finally {
+        dispatch(setLoading(false));
+      }
+    };
 
     fetchArticles();
   }, [selectedCategory, searchQuery, currentPage, dispatch]);
@@ -68,7 +67,7 @@ export default function HomePage() {
 
       {loading ? (
         <p style={{ textAlign: 'center', color: '#888', padding: 48 }}>Đang tải...</p>
-      ) : !articles || !articles || articles.length === 0 ? ( // ⚠ FIX 5: tránh undefined
+      ) : !articles || articles.length === 0 ? (
         <p style={{ textAlign: 'center', color: '#888', padding: 48 }}>Không tìm thấy bài viết nào.</p>
       ) : (
         <div style={{

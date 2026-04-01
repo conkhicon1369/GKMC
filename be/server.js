@@ -5,11 +5,11 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors({
-  origin: '*', // cho phép tất cả (dễ test)
+  origin: '*',
 }));
 app.use(express.json());
 
-// ✅ CONNECT ĐÚNG DATABASE Newdb
+// ✅ CONNECT DATABASE
 mongoose.connect('mongodb+srv://demomongo:passworddemo@cluster0.bvy1owa.mongodb.net/Newdb?appName=Cluster0')
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
@@ -17,7 +17,6 @@ mongoose.connect('mongodb+srv://demomongo:passworddemo@cluster0.bvy1owa.mongodb.
 
 // ===================== MODELS =====================
 
-// AUTHOR
 const authorSchema = new mongoose.Schema({
   _id: Number,
   name: String,
@@ -26,11 +25,8 @@ const authorSchema = new mongoose.Schema({
   bio: String,
 }, { _id: false });
 
-// ✅ chỉ định rõ collection
 const Author = mongoose.model('Author', authorSchema, 'authors');
 
-
-// ARTICLE
 const articleSchema = new mongoose.Schema({
   title: { type: String, required: true },
   slug: { type: String, unique: true },
@@ -47,8 +43,6 @@ const articleSchema = new mongoose.Schema({
 
 const Article = mongoose.model('Article', articleSchema, 'articles');
 
-
-// COMMENT
 const commentSchema = new mongoose.Schema({
   articleId: { type: mongoose.Schema.Types.ObjectId, ref: 'Article', required: false },
   username: String,
@@ -61,43 +55,19 @@ const Comment = mongoose.model('Comment', commentSchema, 'comments');
 
 // ===================== ROUTES =====================
 
-// test root
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
 
+// ✅ FIX: Mount các router files đầy đủ chức năng
+//    (thay vì viết inline thiếu route)
+const articlesRouter = require('./routes/articles');
+const authorsRouter = require('./routes/authors');
+const commentsRouter = require('./routes/comments');
 
-// 👉 GET ALL ARTICLES
-app.get('/api/articles', async (req, res) => {
-  try {
-    const data = await Article.find();
-    res.json(data);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-
-// 👉 GET AUTHORS
-app.get('/api/authors', async (req, res) => {
-  try {
-    const data = await Author.find();
-    res.json(data);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-
-// 👉 GET COMMENTS
-app.get('/api/comments', async (req, res) => {
-  try {
-    const data = await Comment.find();
-    res.json(data);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+app.use('/api/articles', articlesRouter);
+app.use('/api/authors', authorsRouter);
+app.use('/api/comments', commentsRouter);
 
 
 // ===================== START SERVER =====================

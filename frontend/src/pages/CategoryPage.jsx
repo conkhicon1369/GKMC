@@ -26,7 +26,13 @@ export default function CategoryPage() {
       dispatch(setLoading(true));
       try {
         const res = await axios.get('/api/articles', { params: { category, limit: 30 } });
-        dispatch(setArticles(res.data));
+
+        // ✅ FIX: Server trả về { articles, total } nên phải lấy đúng field
+        //    (không dispatch thẳng res.data vì sẽ bị undefined)
+        dispatch(setArticles({
+          articles: res.data.articles,
+          total: res.data.total,
+        }));
       } catch (err) {
         console.error(err);
       } finally {
