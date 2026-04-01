@@ -1,0 +1,190 @@
+{
+  "authors": [
+    {
+      "_id": 1,
+      "name": "Nguyễn Minh Khoa",
+      "email": "khoa@vietnews.vn",
+      "bio": "Phóng viên thời sự với 10 năm kinh nghiệm tại các tờ báo lớn.",
+      "avatar": "https://i.pravatar.cc/100?img=1"
+    },
+    {
+      "_id": 2,
+      "name": "Trần Thị Lan",
+      "email": "lan@vietnews.vn",
+      "bio": "Biên tập viên kinh tế, chuyên phân tích thị trường tài chính.",
+      "avatar": "https://i.pravatar.cc/100?img=5"
+    },
+    {
+      "_id": 3,
+      "name": "Lê Văn Hùng",
+      "email": "hung@vietnews.vn",
+      "bio": "Phóng viên thể thao, bình luận viên bóng đá quốc tế.",
+      "avatar": "https://i.pravatar.cc/100?img=3"
+    },
+    {
+      "_id": 4,
+      "name": "Phạm Thu Hương",
+      "email": "huong@vietnews.vn",
+      "bio": "Phóng viên giải trí, chuyên về điện ảnh và âm nhạc.",
+      "avatar": "https://i.pravatar.cc/100?img=9"
+    },
+    {
+      "_id": 5,
+      "name": "Đặng Quốc Bảo",
+      "email": "bao@vietnews.vn",
+      "bio": "Chuyên gia công nghệ, review sản phẩm và xu hướng AI.",
+      "avatar": "https://i.pravatar.cc/100?img=7"
+    }
+  ],
+
+  "articles": [
+    {
+      "title": "Việt Nam đạt mức tăng trưởng GDP 7.5% trong quý I/2026",
+      "slug": "viet-nam-tang-truong-gdp-2026",
+      "summary": "Tổng cục Thống kê công bố số liệu tích cực về tình hình kinh tế Việt Nam, GDP quý I đạt mức cao nhất trong 5 năm gần đây.",
+      "content": "Theo báo cáo mới nhất từ Tổng cục Thống kê, GDP Việt Nam trong quý I/2026 đạt mức tăng trưởng 7.5% so với cùng kỳ năm ngoái. Đây là mức tăng trưởng ấn tượng, vượt xa dự báo của nhiều tổ chức quốc tế.\n\nCác lĩnh vực đóng góp chính vào tăng trưởng bao gồm: xuất khẩu điện tử tăng 18%, du lịch phục hồi mạnh mẽ với 4.2 triệu lượt khách quốc tế, và đầu tư FDI đạt 8.5 tỷ USD.\n\nThủ tướng Chính phủ nhấn mạnh: đây là kết quả của quá trình cải cách kinh tế bền vững và nỗ lực của toàn bộ hệ thống chính trị trong việc thu hút đầu tư và thúc đẩy sản xuất.\n\nCác chuyên gia kinh tế dự báo, với đà tăng trưởng này, Việt Nam có khả năng đạt mục tiêu GDP cả năm 7% như Nghị quyết Quốc hội đã đề ra.",
+      "thumbnail": "https://picsum.photos/seed/economy1/800/400",
+      "category": "Kinh tế",
+      "tags": ["GDP", "kinh tế", "tăng trưởng", "2026"],
+      "authorId": 2,
+      "views": 1240,
+      "status": "published",
+      "publishedAt": "2026-03-28T08:00:00Z"
+    },
+    {
+      "title": "Đội tuyển Việt Nam chính thức giành vé dự World Cup 2026",
+      "slug": "doi-tuyen-viet-nam-world-cup-2026",
+      "summary": "Chiến thắng lịch sử 2-0 trước Thái Lan đã đưa bóng đá Việt Nam lần đầu tiên đặt chân lên sân chơi toàn cầu.",
+      "content": "Sân vận động Mỹ Đình tối qua đã vỡ òa trong những tiếng reo hò vui mừng khi tiếng còi kết thúc trận đấu vang lên. Đội tuyển Việt Nam đã xuất sắc đánh bại Thái Lan với tỷ số 2-0, chính thức giành tấm vé cuối cùng tham dự World Cup 2026 tổ chức tại Mỹ, Canada và Mexico.\n\nHai bàn thắng được ghi bởi tiền đạo Nguyễn Văn Toàn ở phút 34 và Trần Minh Vương ở phút 78. Bàn thắng thứ hai được khán giả bình chọn là bàn thắng đẹp nhất vòng loại khu vực Đông Nam Á.\n\nHuấn luyện viên trưởng Kim Sang-sik chia sẻ sau trận: 'Đây là khoảnh khắc lịch sử không chỉ với đội bóng mà còn với toàn thể người dân Việt Nam. Chúng tôi đã chuẩn bị rất kỹ lưỡng trong suốt hai năm qua.'\n\nVới thành tích này, Việt Nam sẽ nằm trong bảng đấu cùng Brazil, Đức và Morocco tại vòng bảng World Cup 2026.",
+      "thumbnail": "https://picsum.photos/seed/football/800/400",
+      "category": "Thể thao",
+      "tags": ["bóng đá", "World Cup", "đội tuyển Việt Nam", "lịch sử"],
+      "authorId": 3,
+      "views": 8450,
+      "status": "published",
+      "publishedAt": "2026-03-30T10:00:00Z"
+    },
+    {
+      "title": "iPhone 18 Pro ra mắt với camera AI thế hệ mới, giá từ 30 triệu đồng",
+      "slug": "iphone-18-pro-ra-mat-2026",
+      "summary": "Apple chính thức giới thiệu iPhone 18 Pro với con chip A20 Bionic và tính năng chụp ảnh AI đột phá, hứa hẹn thay đổi trải nghiệm người dùng.",
+      "content": "Tại sự kiện Spring Forward 2026 diễn ra tại Cupertino, Apple đã chính thức ra mắt dòng iPhone 18, trong đó nổi bật nhất là mẫu iPhone 18 Pro với nhiều nâng cấp đáng kể.\n\nĐiểm nhấn lớn nhất của máy là hệ thống camera được trang bị AI Vision Engine mới, cho phép chụp ảnh thiếu sáng cực kỳ ấn tượng và tính năng 'Moment Capture' giúp chụp liên tiếp 60 khung/giây.\n\nChip A20 Bionic được sản xuất theo tiến trình 2nm, mạnh hơn 40% so với thế hệ trước trong khi tiêu thụ điện năng thấp hơn 25%.\n\nTại Việt Nam, iPhone 18 Pro sẽ được bán chính hãng qua hệ thống Apple Premium Reseller từ ngày 15/4/2026 với giá khởi điểm 29.990.000 đồng cho bản 256GB.",
+      "thumbnail": "https://picsum.photos/seed/iphone/800/400",
+      "category": "Công nghệ",
+      "tags": ["Apple", "iPhone 18", "smartphone", "AI"],
+      "authorId": 5,
+      "views": 5620,
+      "status": "published",
+      "publishedAt": "2026-03-29T14:00:00Z"
+    },
+    {
+      "title": "Siêu bão Sơn Ca đổ bộ miền Trung, 5 tỉnh ban bố tình trạng khẩn cấp",
+      "slug": "sieu-bao-son-ca-mien-trung-2026",
+      "summary": "Bão số 4 năm 2026 với sức gió cấp 14 đã đổ bộ vào các tỉnh miền Trung, gây thiệt hại nghiêm trọng về người và tài sản.",
+      "content": "Siêu bão Sơn Ca, được Trung tâm Khí tượng Thủy văn Quốc gia đánh giá là cơn bão mạnh nhất trong vòng 20 năm qua tại Việt Nam, đã chính thức đổ bộ vào đất liền lúc 3 giờ sáng nay tại khu vực Đà Nẵng - Quảng Nam.\n\nHiện tại, 5 tỉnh thành gồm Đà Nẵng, Quảng Nam, Quảng Ngãi, Bình Định và Phú Yên đã ban bố tình trạng khẩn cấp. Toàn bộ học sinh được nghỉ học, nhiều khu vực ven biển đã được di dân khẩn cấp từ 3 ngày trước.\n\nTính đến 6 giờ sáng nay, đã có báo cáo 12 người thương vong và hàng trăm nhà dân bị tốc mái. Lực lượng quân đội và cứu hộ đang được điều động khẩn cấp đến các vùng bị ảnh hưởng nặng nhất.\n\nBan Chỉ đạo phòng chống thiên tai Trung ương đang họp khẩn và yêu cầu các địa phương ưu tiên tuyệt đối cho công tác cứu người.",
+      "thumbnail": "https://picsum.photos/seed/storm/800/400",
+      "category": "Thời sự",
+      "tags": ["bão", "thiên tai", "miền Trung", "khẩn cấp"],
+      "authorId": 1,
+      "views": 12300,
+      "status": "published",
+      "publishedAt": "2026-03-31T06:30:00Z"
+    },
+    {
+      "title": "Phim 'Đất Rồng' của đạo diễn Trấn Thành phá kỷ lục phòng vé Việt Nam",
+      "slug": "phim-dat-rong-tran-thanh-ky-luc-2026",
+      "summary": "Sau 10 ngày công chiếu, 'Đất Rồng' đã thu về hơn 400 tỷ đồng, trở thành bộ phim Việt Nam có doanh thu cao nhất mọi thời đại.",
+      "content": "Bộ phim bom tấn 'Đất Rồng' của đạo diễn Trấn Thành đã chính thức phá vỡ kỷ lục phòng vé Việt Nam sau chỉ 10 ngày ra rạp với doanh thu vượt 400 tỷ đồng, vượt qua kỷ lục 380 tỷ của 'Nhà Bà Nữ' cùng tác giả.\n\nBộ phim lấy bối cảnh Việt Nam thế kỷ 17, kể về cuộc hành trình của một thanh niên trẻ khám phá bí ẩn về vùng đất huyền bí ở Tây Nguyên. Phim được đầu tư hơn 150 tỷ đồng với nhiều cảnh quay hoành tráng và kỹ xảo đỉnh cao.\n\nTrấn Thành chia sẻ tại buổi họp báo: 'Tôi muốn làm một bộ phim mà người Việt Nam tự hào khi xem. Và những con số này chứng minh điện ảnh Việt Nam đã thực sự trưởng thành.'\n\nPhim đang được nhiều nhà phân phối quốc tế quan tâm để phát hành tại thị trường Đông Nam Á và Bắc Mỹ.",
+      "thumbnail": "https://picsum.photos/seed/movie/800/400",
+      "category": "Giải trí",
+      "tags": ["phim Việt", "Trấn Thành", "phòng vé", "điện ảnh"],
+      "authorId": 4,
+      "views": 7890,
+      "status": "published",
+      "publishedAt": "2026-03-27T09:00:00Z"
+    },
+    {
+      "title": "Hà Nội thông xe tuyến metro số 3 Nhổn - Ga Hà Nội",
+      "slug": "ha-noi-thong-xe-metro-so-3-2026",
+      "summary": "Sau nhiều năm chờ đợi, tuyến đường sắt đô thị số 3 chính thức đi vào hoạt động, kỳ vọng giảm tải áp lực giao thông thủ đô.",
+      "content": "Lễ thông xe tuyến metro số 3 đoạn Nhổn - Ga Hà Nội đã diễn ra sáng nay với sự tham dự của lãnh đạo Thành phố Hà Nội và đông đảo người dân thủ đô.\n\nTuyến metro dài 12.5 km với 8 ga này sẽ vận chuyển tối đa 40.000 lượt hành khách/giờ trong giờ cao điểm, tương đương 27 làn xe ô tô. Giá vé được ấn định từ 8.000 - 26.000 đồng tùy cự ly.\n\nTheo Ban Quản lý đường sắt đô thị Hà Nội, toàn tuyến sẽ hoàn thành trong năm 2027 với đoạn ngầm từ Ga Hà Nội đến Hoàng Mai được tiếp tục thi công.\n\nNhiều người dân phấn khởi xếp hàng để trải nghiệm chuyến đi metro đầu tiên. Anh Minh Tuấn (32 tuổi, quận Cầu Giấy) chia sẻ: 'Tôi đã chờ đợi điều này từ lâu. Giờ đi làm sẽ đỡ vất vả hơn nhiều.'",
+      "thumbnail": "https://picsum.photos/seed/metro/800/400",
+      "category": "Thời sự",
+      "tags": ["metro", "Hà Nội", "giao thông", "đô thị"],
+      "authorId": 1,
+      "views": 3450,
+      "status": "published",
+      "publishedAt": "2026-03-26T07:00:00Z"
+    },
+    {
+      "title": "VinFast ký hợp đồng cung cấp 50.000 xe điện cho thị trường Mỹ",
+      "slug": "vinfast-hop-dong-my-50000-xe-2026",
+      "summary": "Thỏa thuận trị giá hơn 2 tỷ USD với tập đoàn Uber đánh dấu bước ngoặt lớn trong chiến lược mở rộng toàn cầu của VinFast.",
+      "content": "VinFast, hãng xe điện Việt Nam, vừa ký kết hợp đồng cung cấp 50.000 xe điện cho Uber tại thị trường Mỹ trong giai đoạn 2026-2028. Thỏa thuận trị giá ước tính hơn 2 tỷ USD này được công bố tại sự kiện ra mắt dòng xe VF9 Pro tại Los Angeles.\n\nChủ tịch VinFast Lê Thị Thu Thủy phát biểu: 'Đây là minh chứng cho thấy xe điện Việt Nam hoàn toàn có thể cạnh tranh ở thị trường khắt khe nhất thế giới. Chúng tôi cam kết chất lượng và dịch vụ đẳng cấp quốc tế.'\n\nTheo kế hoạch, lô xe đầu tiên gồm 5.000 chiếc VF8 và VF9 sẽ được bàn giao vào quý III/2026. Toàn bộ xe sẽ được sản xuất tại nhà máy VinFast ở North Carolina, Mỹ.\n\nCổ phiếu VFS trên sàn NASDAQ tăng 12% ngay sau khi thông tin được công bố.",
+      "thumbnail": "https://picsum.photos/seed/vinfast/800/400",
+      "category": "Kinh tế",
+      "tags": ["VinFast", "xe điện", "Uber", "xuất khẩu"],
+      "authorId": 2,
+      "views": 4120,
+      "status": "published",
+      "publishedAt": "2026-03-25T11:00:00Z"
+    },
+    {
+      "title": "Trí tuệ nhân tạo GPT-6 ra đời: Có thể thực hiện lập luận phức tạp như tiến sĩ",
+      "slug": "gpt-6-ra-doi-2026",
+      "summary": "OpenAI công bố mô hình AI thế hệ mới với khả năng xử lý ngôn ngữ và lập luận khoa học vượt trội, mở ra kỷ nguyên mới cho nghiên cứu.",
+      "content": "OpenAI vừa chính thức công bố GPT-6, mô hình ngôn ngữ lớn mạnh nhất từ trước đến nay, với khả năng lập luận và giải quyết bài toán phức tạp đạt mức tương đương tiến sĩ trong nhiều lĩnh vực.\n\nGPT-6 được huấn luyện trên 50 nghìn tỷ tham số, gấp 10 lần GPT-4, và lần đầu tiên có khả năng thực hiện thí nghiệm khoa học ảo, viết và kiểm thử code tự động, cũng như tự động tìm kiếm và đối chiếu thông tin từ hàng nghìn nguồn khác nhau.\n\nTrong bài kiểm tra IQ khoa học máy tính, GPT-6 đạt 94 điểm trên thang 100, vượt qua 99.7% số tiến sĩ ngành này.\n\nSam Altman, CEO của OpenAI, tuyên bố: 'GPT-6 không phải là một bước tiến thông thường. Đây là bước nhảy vọt có thể thay đổi cách nhân loại tiếp cận khoa học và nghiên cứu.'\n\nGPT-6 API sẽ được mở cho doanh nghiệp từ tháng 5/2026, với mức giá dự kiến giảm 60% so với GPT-4 nhờ hiệu quả tính toán được cải thiện đáng kể.",
+      "thumbnail": "https://picsum.photos/seed/ai2026/800/400",
+      "category": "Công nghệ",
+      "tags": ["AI", "GPT-6", "OpenAI", "trí tuệ nhân tạo"],
+      "authorId": 5,
+      "views": 9870,
+      "status": "published",
+      "publishedAt": "2026-03-31T09:00:00Z"
+    },
+    {
+      "title": "BLACKPINK xác nhận lịch diễn tại Hà Nội và TP.HCM tháng 6/2026",
+      "slug": "blackpink-concert-viet-nam-2026",
+      "summary": "Bốn cô gái BLACKPINK sẽ mang show diễn 'BORN PINK WORLD TOUR' đến hai thành phố lớn nhất Việt Nam, vé dự kiến mở bán trong tuần tới.",
+      "content": "YG Entertainment vừa chính thức xác nhận Việt Nam là một trong các điểm đến của BLACKPINK trong chặng cuối BORN PINK WORLD TOUR 2026. Nhóm nhạc K-pop hàng đầu thế giới sẽ biểu diễn tại Hà Nội (15-16/6) và TP.HCM (20-21/6).\n\nShow diễn tại Hà Nội sẽ được tổ chức tại sân vận động Quốc gia Mỹ Đình với sức chứa 45.000 khán giả mỗi đêm. TP.HCM sẽ là sân vận động Thống Nhất cải tạo với sức chứa 35.000 chỗ.\n\nVé sẽ mở bán vào 10h00 thứ Bảy tuần tới qua hệ thống TicketBox với giá từ 1.500.000 đồng đến 8.500.000 đồng tùy khu vực.\n\nFanbase BLINK Việt Nam đã bắt đầu lên kế hoạch cắm trại và tổ chức fan meeting trước sự kiện. Đây sẽ là lần đầu tiên BLACKPINK biểu diễn chính thức tại Việt Nam sau 8 năm hoạt động.",
+      "thumbnail": "https://picsum.photos/seed/kpop/800/400",
+      "category": "Giải trí",
+      "tags": ["BLACKPINK", "K-pop", "concert", "âm nhạc"],
+      "authorId": 4,
+      "views": 15600,
+      "status": "published",
+      "publishedAt": "2026-03-30T16:00:00Z"
+    },
+    {
+      "title": "SEA Games 35: Việt Nam dẫn đầu bảng tổng sắp huy chương",
+      "slug": "sea-games-35-viet-nam-dan-dau-2026",
+      "summary": "Sau 5 ngày thi đấu, đoàn thể thao Việt Nam đang dẫn đầu với 48 HCV, 39 HCB và 35 HCĐ tại SEA Games 35 tổ chức ở Philippines.",
+      "content": "Đoàn thể thao Việt Nam đang có màn trình diễn xuất sắc tại SEA Games 35 diễn ra tại Manila, Philippines. Sau 5 trong tổng số 12 ngày thi đấu, Việt Nam đang dẫn đầu bảng tổng sắp huy chương với 48 HCV, vượt qua chủ nhà Philippines (42 HCV) và Thái Lan (38 HCV).\n\nNhững gương mặt nổi bật nhất của đoàn Việt Nam gồm có: vận động viên bơi lội Nguyễn Thị Ánh Viên với 4 HCV, xạ thủ Hoàng Xuân Vinh đoạt 2 HCV và cung thủ Lê Thị Phương giành 3 HCV liên tiếp.\n\nHuấn luyện viên trưởng đoàn Việt Nam Nguyễn Mạnh Hùng cho biết mục tiêu của đoàn là bảo vệ ngôi đầu bảng và hướng đến con số 60 HCV tổng cộng.\n\nCác bộ môn kỳ vọng mang về nhiều huy chương trong những ngày tới bao gồm điền kinh, cử tạ, karate và đặc biệt là bóng đá nam và nữ.",
+      "thumbnail": "https://picsum.photos/seed/seagames/800/400",
+      "category": "Thể thao",
+      "tags": ["SEA Games", "thể thao", "Việt Nam", "huy chương vàng"],
+      "authorId": 3,
+      "views": 6230,
+      "status": "published",
+      "publishedAt": "2026-03-29T20:00:00Z"
+    }
+  ],
+
+  "comments": [
+    {
+      "username": "BinhLuanVien123",
+      "content": "Tin tức rất hay và cập nhật! Cảm ơn tòa soạn đã đưa tin nhanh.",
+      "createdAt": "2026-03-31T08:30:00Z"
+    },
+    {
+      "username": "DocGiaVietNam",
+      "content": "Mong đất nước ngày càng phát triển, tự hào lắm!",
+      "createdAt": "2026-03-30T14:15:00Z"
+    },
+    {
+      "username": "AnhHaiSaiGon",
+      "content": "Bài viết công phu, thông tin chính xác. Tiếp tục phát huy nhé!",
+      "createdAt": "2026-03-29T11:00:00Z"
+    }
+  ]
+}
