@@ -46,7 +46,7 @@ export default function CategoryPage() {
 
       {loading ? (
         <p style={{ textAlign: 'center', color: '#888', padding: 48 }}>Đang tải...</p>
-      ) : articles.length === 0 ? (
+      ) : !articles || articles.length === 0 ? (
         <p style={{ textAlign: 'center', color: '#888', padding: 48 }}>Chưa có bài viết trong mục này.</p>
       ) : (
         <div style={{

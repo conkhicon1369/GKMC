@@ -14,25 +14,39 @@ export default function HomePage() {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      dispatch(setLoading(true));
-      try {
-        const params = { page: currentPage, limit: ARTICLES_PER_PAGE };
-        if (selectedCategory && selectedCategory !== 'Tất cả') params.category = selectedCategory;
-        const res = await axios.get('/api/articles', { params });
-        let data = res.data;
-        if (searchQuery) {
-          data.articles = data.articles.filter(a =>
-            a.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            a.summary?.toLowerCase().includes(searchQuery.toLowerCase())
-          );
-        }
-        dispatch(setArticles(data));
-      } catch (err) {
-        console.error(err);
-      } finally {
-        dispatch(setLoading(false));
-      }
-    };
+  dispatch(setLoading(true));
+  try {
+    const params = { page: currentPage, limit: ARTICLES_PER_PAGE };
+    if (selectedCategory && selectedCategory !== 'Tất cả') {
+      params.category = selectedCategory;
+    }
+
+    const res = await axios.get('https://YOUR-5000-URL/api/articles', { params });
+
+    // ✅ LẤY ĐÚNG DATA
+    let articlesData = res.data.articles;
+
+    // ✅ FILTER
+    if (searchQuery) {
+      articlesData = articlesData.filter(a =>
+        a.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        a.summary?.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
+    // ✅ 👉 VIẾT Ở ĐÂY (QUAN TRỌNG)
+    dispatch(setArticles({
+      articles: articlesData,
+      total: res.data.total
+    }));
+
+  } catch (err) {
+    console.error(err);
+  } finally {
+    dispatch(setLoading(false));
+  }
+};
+
     fetchArticles();
   }, [selectedCategory, searchQuery, currentPage, dispatch]);
 
@@ -44,13 +58,17 @@ export default function HomePage() {
       <div style={{ marginBottom: 24 }}>
         <h2 style={{ margin: 0, fontSize: 22, color: '#222' }}>
           {selectedCategory !== 'Tất cả' ? `📂 ${selectedCategory}` : '🗞️ Tin mới nhất'}
-          {searchQuery && <span style={{ fontSize: 16, color: '#888', marginLeft: 12 }}>— Kết quả cho "{searchQuery}"</span>}
+          {searchQuery && (
+            <span style={{ fontSize: 16, color: '#888', marginLeft: 12 }}>
+              — Kết quả cho "{searchQuery}"
+            </span>
+          )}
         </h2>
       </div>
 
       {loading ? (
         <p style={{ textAlign: 'center', color: '#888', padding: 48 }}>Đang tải...</p>
-      ) : articles.length === 0 ? (
+      ) : !articles || !articles || articles.length === 0 ? ( // ⚠ FIX 5: tránh undefined
         <p style={{ textAlign: 'center', color: '#888', padding: 48 }}>Không tìm thấy bài viết nào.</p>
       ) : (
         <div style={{

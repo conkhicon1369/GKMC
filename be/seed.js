@@ -5,7 +5,7 @@
 const mongoose = require('mongoose');
 
 // Dùng đúng connection string trong server.js của bạn
-const MONGO_URI = 'mongodb+srv://demomongo:passworddemo@cluster0.bvy1owa.mongodb.net/news_db?appName=Cluster0';
+const MONGODB_URI = 'mongodb+srv://demomongo:passworddemo@cluster0.bvy1owa.mongodb.net/Newdb?appName=Cluster0';
 
 const articleSchema = new mongoose.Schema({
   title: String, slug: { type: String, unique: true },
@@ -20,13 +20,12 @@ const authorSchema = new mongoose.Schema({
   _id: Number, name: String, email: String, avatar: String, bio: String,
 }, { _id: false });
 
-const Article = mongoose.model('Article', articleSchema);
-const Author = mongoose.model('Author', authorSchema);
-
+const Author = mongoose.model('Author', authorSchema, 'authors');
+const Article = mongoose.model('Article', articleSchema, 'articles');
 const seedData = require('../database/seed.json');
 
 async function seed() {
-  await mongoose.connect(MONGO_URI);
+  await mongoose.connect(MONGODB_URI);
   console.log('Connected to MongoDB');
 
   // Xóa dữ liệu cũ
