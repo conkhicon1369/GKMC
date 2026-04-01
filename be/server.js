@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // Thay YOUR_MONGODB_URI bằng connection string của bạn
-mongoose.connect('mongodb://localhost:27017/news_db')
+mongoose.connect('mongodb+srv://demomongo:passworddemo@cluster0.bvy1owa.mongodb.net/?appName=Cluster0')
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
